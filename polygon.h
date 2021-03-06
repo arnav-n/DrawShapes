@@ -16,40 +16,7 @@ class Polygon : public shape {
 
 	bool eval(double x, double y) override;
 	void addVert(vec2 inV) { theVerts.push_back(inV); }
-
-	double getMinX() {
-		return min_element(theVerts.begin(), theVerts.end(), [](vec2 l, vec2 r){
-					return l.x() < r.x();
-      				}
-      			)->x();
-	}
-
-	double getMinY() {
-		vec2 min 
-      		= *min_element(theVerts.begin(), theVerts.end(), [](vec2 l, vec2 r){
-					return l.y() < r.y();
-      				}
-      			);
-      	return min.y();
-	}
-
-	double getMaxX() {
-		vec2 max 
-      		= *max_element(theVerts.begin(), theVerts.end(), [](vec2 l, vec2 r){
-					return l.x() < r.x();
-      				}
-      			);
-      	return max.x();
-	}
-
-	double getMaxY(){
-		vec2 max 
-      		= *max_element(theVerts.begin(), theVerts.end(), [](vec2 l, vec2 r){
-					return l.y() < r.y();
-      				}
-      			);
-      	return max.y();
-	}
+	bool concave();
 
   private:
 	std::vector<vec2> theVerts;
