@@ -134,7 +134,7 @@ int main(int argc, char *argv[]) {
 		createImage(theImage3, theShapes, '%');
 
 		if (outFile0 && outFile1 && outFile2 && outFile3) {
-			// cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
+			cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
 			theImage0.fullWriteOut(outFile0);
 			theImage1.fullWriteOut(outFile1);
 			theImage2.fullWriteOut(outFile2);
