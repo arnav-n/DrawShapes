@@ -123,7 +123,7 @@ int main(int argc, char *argv[]) {
 
 		//prior to creating image test all valid
 		for (auto s : theShapes) {
-			s->validate();
+			// s->validate();
 		}
 
 		//create the images
