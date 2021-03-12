@@ -55,7 +55,7 @@
 
 // 	string outFilename;
 // 	if (argc < 4) {
-// 		cerr << "Error format: a.out sizeX sizeY outfileName" << endl;
+// 		cout<< "Error format: a.out sizeX sizeY outfileName" << endl;
 // 	} else {
 // 		sizeX = stoi(argv[1]);
 // 		sizeY = stoi(argv[2]);

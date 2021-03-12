@@ -31,7 +31,7 @@ class Implicit2D : public shape {
 		}
 		catch (const char* msg){
 			inC.setC(color(0));
-			cerr<<msg<<endl;
+			cout<<msg<<endl;
 		}
 		try{
 			if(radii.x()==0 || radii.y()==0) throw "ellipse divide zero";
@@ -40,7 +40,7 @@ class Implicit2D : public shape {
 			if(radii.x()==0) radii.setX(2);
 			else radii.setY(2);
 			inC.setC(color(255,0,0));
-			cerr<<msg<<endl;
+			cout<<msg<<endl;
 		}
 	}
 

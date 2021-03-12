@@ -45,7 +45,7 @@ class Rect : public shape {
 		catch(const char* msg){
 			inC.setC(color(0));
 			// setColor(color(0));
-			cerr<<msg<<endl;
+			cout<<msg<<endl;
 		}
 		try{
 			if(upperL.x()>lowerR.x()||upperL.y()>lowerR.y()) 
@@ -64,7 +64,7 @@ class Rect : public shape {
 			}
 			// cout<<"setting red"<<endl;
 			inC.setC(color(255,0,0));
-			cerr<<msg<<endl;
+			cout<<msg<<endl;
 		}
 
 	}

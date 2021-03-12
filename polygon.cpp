@@ -118,7 +118,7 @@ void Polygon::validate() {
 	}
 	catch(const char* msg){
 		inC.setC(color(0));
-		cerr<<msg<<endl;
+		cout<<msg<<endl;
 	}
 	try{
 		if(concave()) throw "polygon concave";
@@ -127,7 +127,7 @@ void Polygon::validate() {
 		inC.setC(color(255,0,0));
 		// erase all but first 2 and last one
 		theVerts.erase(theVerts.begin()+2,theVerts.end()-1);
-		cerr<<msg<<endl;
+		cout<<msg<<endl;
 	}
 
 }

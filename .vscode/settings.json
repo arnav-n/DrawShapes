@@ -7,6 +7,7 @@
         "vector": "cpp",
         "algorithm": "cpp",
         "iosfwd": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "iostream": "cpp"
     }
 }
