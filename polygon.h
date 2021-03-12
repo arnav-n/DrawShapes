@@ -5,7 +5,6 @@
 #include "color.h"
 #include "shape.h"
 #include <algorithm>
-
 /* simple data representation of an implicit ellipse */
 class Polygon : public shape {
   public:
@@ -17,6 +16,7 @@ class Polygon : public shape {
 	bool eval(double x, double y) override;
 	void addVert(vec2 inV) { theVerts.push_back(inV); }
 	bool concave();
+	void validate() override;
 
   private:
 	std::vector<vec2> theVerts;

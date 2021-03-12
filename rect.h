@@ -3,6 +3,8 @@
 
 #include "vec2.h"
 #include "shape.h"
+using namespace std;
+
 
 /* simple data representation of a rectangle */
 class Rect : public shape {
@@ -36,6 +38,36 @@ class Rect : public shape {
 	void setLCorner(vec2 inLCor) { upperL = inLCor; }
 	void setRCorner(vec2 inRCor) {lowerR = inRCor;}
 
+	void validate() override{
+		try{
+			if(upperL.x()<0||upperL.y()<0||lowerR.x()<0||lowerR.y()<0) throw "rect vert less zero";
+		}
+		catch(const char* msg){
+			inC.setC(color(0));
+			// setColor(color(0));
+			cerr<<msg<<endl;
+		}
+		try{
+			if(upperL.x()>lowerR.x()||upperL.y()>lowerR.y()) 
+				throw "rect order incorrect";
+		}
+		catch(const char* msg){
+			if(upperL.x()>lowerR.x()){
+				double temp = upperL.x();
+				upperL.setX(lowerR.x());
+				lowerR.setX(temp);
+			}
+			if(upperL.y()>lowerR.y()){
+				double temp = upperL.y();
+				upperL.setY(lowerR.y());
+				lowerR.setY(temp);
+			}
+			// cout<<"setting red"<<endl;
+			inC.setC(color(255,0,0));
+			cerr<<msg<<endl;
+		}
+
+	}
   private:
 	vec2 upperL;
 	vec2 lowerR;

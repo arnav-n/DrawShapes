@@ -109,3 +109,25 @@ bool Polygon::concave() {
 	
 	return concave;
 }
+
+void Polygon::validate() {
+	try{
+		for (int i = 0; i < theVerts.size(); i++){
+			if(theVerts.at(i).x()<0||theVerts.at(i).y()<0) throw "polygon vert less zero";
+		}	
+	}
+	catch(const char* msg){
+		inC.setC(color(0));
+		cerr<<msg<<endl;
+	}
+	try{
+		if(concave()) throw "polygon concave";
+	}
+	catch(const char* msg){
+		inC.setC(color(255,0,0));
+		// erase all but first 2 and last one
+		theVerts.erase(theVerts.begin()+2,theVerts.end()-1);
+		cerr<<msg<<endl;
+	}
+
+}

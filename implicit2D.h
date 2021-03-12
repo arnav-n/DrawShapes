@@ -2,6 +2,7 @@
 #define IMPL2D_H
 #include "vec2.h"
 #include "shape.h"
+using namespace std;
 
 /* simple data representation of an implicit ellipse - derived from shape */
 class Implicit2D : public shape {
@@ -23,6 +24,25 @@ class Implicit2D : public shape {
 
 	double getMaxR() {return fmax(radii.x(), radii.y());}
 	vec2 getCent() const {return center; }
+
+	void validate() override{
+		try{
+			if(center.x()<0 || center.y()<0) throw "ellipse center less zero";
+		}
+		catch (const char* msg){
+			inC.setC(color(0));
+			cerr<<msg<<endl;
+		}
+		try{
+			if(radii.x()==0 || radii.y()==0) throw "ellipse divide zero";
+		}
+		catch (const char* msg){
+			if(radii.x()==0) radii.setX(2);
+			else radii.setY(2);
+			inC.setC(color(255,0,0));
+			cerr<<msg<<endl;
+		}
+	}
 
   private:
 	vec2 center;

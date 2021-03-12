@@ -12,6 +12,8 @@
 #include "polygon.h"
 #include "util.h"
 #include "image.h"
+#include "createImage.h"
+
 
 using namespace std;
 
@@ -24,6 +26,7 @@ using namespace std;
 
 /*read command line arguments and write output - covers all tests for lab08*/
 int main(int argc, char *argv[]) {
+    // cout<<"using new main"<<endl;
 
 	ofstream outFile0, outFile1, outFile2, outFile3;
 	int sizeX, sizeY;
@@ -124,12 +127,11 @@ int main(int argc, char *argv[]) {
 		}
 
 		//create the images
-		/* commented out because you must do this for TASK 1 !!
+		// commented out because you must do this for TASK 1 !!
 		createImage(theImage0, theShapes, color(12));
 		createImage(theImage1, theShapes, 128);
 		createImage(theImage2, theShapes, true);
 		createImage(theImage3, theShapes, '%');
-		*/
 
 		if (outFile0 && outFile1 && outFile2 && outFile3) {
 			cout << "writing an image of size: " << sizeX << " " << sizeY << " to: " << argv[3] << endl;
